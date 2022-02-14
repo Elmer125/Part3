@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-const url = process.env.MONGODB_URI || 'mongodb+srv://mauricio05:TMg6JiZmQXaR6Qy@cluster0.pstm5.mongodb.net/note-app?retryWrites=true&w=majority';
+const url =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://mauricio05:TMg6JiZmQXaR6Qy@cluster0.pstm5.mongodb.net/note-app?retryWrites=true&w=majority";
 
 console.log("connecting to ", url);
 
@@ -19,7 +21,7 @@ const noteSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: date,
+    type: Date,
     required: true,
   },
   important: Boolean,
