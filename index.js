@@ -17,10 +17,10 @@ morgan.token("content", (req, res) => {
 
 app.use(morgan(":method :url :status :response-time ms :content"));
 
-const unknownEndpoint = (request, response) => {
+/* const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: "unknown endpoint" });
 };
-app.use(unknownEndpoint);
+app.use(unknownEndpoint); */
 
 const errorHandler = (error, request, response, next) => {
   console.error(error.message);
@@ -146,7 +146,7 @@ app.post("/api/notes", (request, response) => {
   response.json(note); */
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
